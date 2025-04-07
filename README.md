@@ -4,7 +4,7 @@ Submitted by: **Arunavo Chowdhury**
 
 This web app: **a dashboard containing various data regarding weather in different locations**
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
