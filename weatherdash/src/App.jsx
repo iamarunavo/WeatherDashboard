@@ -2,6 +2,11 @@ import NavBar from './components/NavBar';
 import { useEffect, useState } from 'react';
 import './App.css';
 import { fetchCityWeather } from './api/weather';
+import { Link } from 'react-router-dom';
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  BarChart, Bar
+} from 'recharts';
 
 const cities = [
   "New York", "Los Angeles", "Chicago", "Miami", "Houston",
@@ -64,7 +69,7 @@ function App() {
             ))}
           </select>
         </div>
-  
+        <div className="content-flex">
         <table>
           <thead>
             <tr>
@@ -78,7 +83,11 @@ function App() {
           <tbody>
             {filteredData.map((w) => (
               <tr key={w.city_name}>
-                <td>{w.city_name}</td>
+                <td>
+                  <Link to={`/city/${encodeURIComponent(w.city_name)}`}>
+                    {w.city_name}
+                  </Link>
+                </td>
                 <td>{w.temp}</td>
                 <td>{w.wind_spd.toFixed(1)}</td>
                 <td>{w.rh}</td>
@@ -87,6 +96,31 @@ function App() {
             ))}
           </tbody>
         </table>
+        <div className="charts">
+        <div className="chart">
+          <h3>🌡️ Temperature by City</h3>
+          <LineChart width={400} height={200} data={weatherData}>
+            <XAxis dataKey="city_name" />
+            <YAxis />
+            <CartesianGrid stroke="#ccc" />
+            <Tooltip />
+            <Line type="monotone" dataKey="temp" stroke="#8884d8" />
+          </LineChart>
+        </div>
+
+        <div className="chart">
+          <h3>💨 Wind Speed by City</h3>
+          <BarChart width={400} height={200} data={weatherData}>
+            <XAxis dataKey="city_name" />
+            <YAxis />
+            <CartesianGrid stroke="#ccc" />
+            <Tooltip />
+            <Bar dataKey="wind_spd" fill="#82ca9d" />
+          </BarChart>
+        </div>
+        </div>
+      </div>
+
       </div>
     </div>
   );

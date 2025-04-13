@@ -107,3 +107,42 @@ th, td {
   background-color: #e0f7fa;
   border-radius: 6px;
 }
+
+.charts {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.chart {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard p {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.content-flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.charts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.table-wrapper {
+  flex: 2;
+  overflow-x: auto;
+}
