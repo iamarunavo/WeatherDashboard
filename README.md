@@ -38,7 +38,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src="https://i.imgur.com/CLkDftZ.gif" alt="Weather Dashboard Walkthrough" width="100%" />
+<img src="https://i.imgur.com/4Js2dTo.gif" title="Video Walkthrough" width="100%" alt="Video Walkthrough" />
+
 
 
 <!-- Replace this with whatever GIF tool you used! -->
